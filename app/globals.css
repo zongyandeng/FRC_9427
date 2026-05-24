@@ -354,16 +354,53 @@ h2 {
 
 .activities {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
 }
 
 .activity {
-  min-height: 236px;
-  padding: 22px;
+  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: linear-gradient(180deg, #ffffff 0%, #f6f9fd 100%);
+  background: var(--white);
+  box-shadow: 0 10px 30px rgba(23, 32, 51, 0.06);
+}
+
+.activity img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #dfe8f4;
+}
+
+.activity-copy {
+  padding: 20px;
+}
+
+.activity-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: var(--blue);
+  font-size: 0.84rem;
+  font-weight: 900;
+}
+
+.activity ul {
+  display: grid;
+  gap: 7px;
+  margin: 14px 0 0;
+  padding-left: 19px;
+  color: #31405d;
+  font-size: 0.94rem;
+}
+
+.activity-source {
+  margin: 16px 0 0;
+  color: #7a869a;
+  font-size: 0.82rem;
+  font-weight: 700;
 }
 
 .activity-icon {
@@ -371,7 +408,6 @@ h2 {
   place-items: center;
   width: 42px;
   height: 42px;
-  margin-bottom: 16px;
   color: var(--white);
   background: var(--cyan);
   border-radius: 8px;
@@ -436,6 +472,75 @@ h2 {
 
 .place h3 {
   margin-top: 0;
+}
+
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.sponsor-card {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 18px;
+  min-height: 216px;
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(23, 32, 51, 0.05);
+}
+
+.sponsor-logo {
+  display: grid;
+  place-items: center;
+  width: 92px;
+  height: 92px;
+  padding: 10px;
+  color: #10213d;
+  background:
+    linear-gradient(135deg, rgba(21, 87, 212, 0.1), rgba(16, 165, 200, 0.08)),
+    #f7fbff;
+  border: 1px solid #dbe7f5;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.sponsor-logo img {
+  width: 100%;
+  max-height: 68px;
+  object-fit: contain;
+}
+
+.sponsor-copy span {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: var(--blue);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.sponsor-copy h3 {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+  line-height: 1.28;
+}
+
+.sponsor-copy p,
+.sponsor-note {
+  margin: 0;
+  color: var(--muted);
+}
+
+.sponsor-note {
+  margin-top: 18px;
+  padding-left: 16px;
+  border-left: 4px solid var(--lime);
 }
 
 .media-grid {
@@ -510,6 +615,7 @@ footer {
   .quick-facts,
   .awards,
   .activities,
+  .sponsor-grid,
   .media-grid,
   .sources {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -540,12 +646,14 @@ footer {
   .quick-facts,
   .awards,
   .activities,
+  .sponsor-grid,
   .media-grid,
   .sources {
     grid-template-columns: 1fr;
   }
 
   .season,
+  .sponsor-card,
   .info-item {
     grid-template-columns: 1fr;
   }
