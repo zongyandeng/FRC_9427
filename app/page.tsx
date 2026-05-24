@@ -437,9 +437,7 @@ export default function Home() {
             <SectionHead title="足跡與基地位置" body="從樹林出發，到澳洲、土耳其、美國休士頓，隊伍足跡逐年擴大。" />
             <div className="place-grid">
               <div className="map-card">
-                <span className="pin" aria-hidden="true" />
-                <h3 className="map-title">新北市樹林區中華路 8 號</h3>
-                <p className="map-body">樹林高中位於新北市樹林區，地址為 238018 新北市樹林區中華路 8 號。這裡是 FIRST 團隊學習、製作與討論的起點。</p>
+                <img src={assetPath("/assets/shulin-location-map.png")} alt="新北市樹林區中華路 8 號位置示意地圖，標示我們的位置與樹林高中" />
               </div>
               <div className="place-list">
                 {places.map(([title, body]) => (

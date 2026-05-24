@@ -423,39 +423,17 @@ h2 {
 
 .map-card {
   position: relative;
-  min-height: 380px;
-  padding: 28px;
-  color: var(--white);
-  background:
-    linear-gradient(135deg, rgba(15, 29, 52, 0.95), rgba(14, 92, 131, 0.82)),
-    url("https://img.youtube.com/vi/JUu4h5PwJaE/maxresdefault.jpg") center / cover;
+  background: #f5f8fb;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow);
 }
 
-.map-title {
-  margin: 0 0 10px;
-  font-size: 1.6rem;
-}
-
-.map-body {
-  max-width: 520px;
-  margin: 0;
-  color: #e8f4ff;
-}
-
-.pin {
-  position: absolute;
-  left: 58%;
-  top: 46%;
-  width: 26px;
-  height: 26px;
-  background: var(--red);
-  border: 4px solid var(--white);
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(-45deg);
-  box-shadow: 0 0 0 10px rgba(227, 59, 66, 0.2);
+.map-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
 }
 
 .place-list {
