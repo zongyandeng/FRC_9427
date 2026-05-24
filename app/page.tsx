@@ -241,6 +241,8 @@ const sponsors = [
   },
 ];
 
+const assetPath = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+
 const mediaCards = [
   {
     href: "https://youtu.be/JUu4h5PwJaE",
@@ -416,7 +418,7 @@ export default function Home() {
               {sponsors.map((sponsor) => (
                 <article className="sponsor-card" key={sponsor.name}>
                   <div className="sponsor-logo" aria-label={`${sponsor.name} 標誌`}>
-                    {"image" in sponsor ? <img src={sponsor.image} alt={`${sponsor.name} logo`} /> : sponsor.logo}
+                    {typeof sponsor.image === "string" ? <img src={assetPath(sponsor.image)} alt={`${sponsor.name} logo`} /> : sponsor.logo}
                   </div>
                   <div className="sponsor-copy">
                     <span>{sponsor.field}</span>
